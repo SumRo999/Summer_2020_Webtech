@@ -1,0 +1,32 @@
+<admission>
+    <student>
+	    <SL_NO>23</SL_NO>
+		<firstNAME>John</firstNAME>
+		<lastNAME>Carter</lastNAME>
+		<ADMISSION_DATE>
+		    <day>25</day>
+			<month>12</month>
+			<year>2015</year>
+		</ADMISSION_DATE>
+	</student>
+	<student>
+	    <SL_NO>29</SL_NO>
+		<firstNAME>Bob</firstNAME>
+		<lastNAME>Marshal</lastNAME>
+		<ADMISSION_DATE>
+		    <day>13</day>
+			<month>01</month>
+			<year>1999</year>
+		</ADMISSION_DATE>
+	</student>
+	<student>
+	    <SL_NO>35</SL_NO>
+		<firstNAME>Clark</firstNAME>
+		<lastNAME>Kent</lastNAME>
+		<ADMISSION_DATE>
+		    <day>17</day>
+			<month>06</month>
+			<year>2005</year>
+		</ADMISSION_DATE>
+	</student>
+</admission>
