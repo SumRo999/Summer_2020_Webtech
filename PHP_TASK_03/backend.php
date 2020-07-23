@@ -73,4 +73,15 @@
 	}
 	else
 		echo "Not selected";
+	echo "</br>"
+	
+	//DOB VALIDATION
+	
+	$day = $_POST['day']
+	$month = $_POST['month']
+	$year = $_POST['year']
+	if($day!= "" and $day>='1' and $day<= '31' and $month!= "" and $month>='1' and $month<= '12' and  $year!= "" and $year>='1900' and $_POST['year']<= '2016'  )
+		echo "DOB is valid";
+	else
+		echo "DOB is invalid";
 ?>
