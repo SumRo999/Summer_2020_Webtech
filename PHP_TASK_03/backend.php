@@ -62,5 +62,15 @@
 	}
 	else
 		echo "Invalid Email"
+	echo"</br>"
 	
+	//GENDER VALIDATION
+	
+	$gender = $_POST['gender']
+	if(isset($gender))
+	{
+		echo "Selected";
+	}
+	else
+		echo "Not selected";
 ?>
