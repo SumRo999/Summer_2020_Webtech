@@ -61,27 +61,38 @@
 			echo "Invalid Email";
 	}
 	else
-		echo "Invalid Email"
-	echo"</br>"
+		echo "Invalid Email";
+	echo"</br>";
 	
 	//GENDER VALIDATION
 	
-	$gender = $_POST['gender']
+	$gender = $_POST['gender'];
 	if(isset($gender))
 	{
-		echo "Selected";
+		echo "Gender is Selected";
 	}
 	else
-		echo "Not selected";
-	echo "</br>"
+		echo "Gender is Not selected";
+	echo "</br>";
 	
 	//DOB VALIDATION
 	
-	$day = $_POST['day']
-	$month = $_POST['month']
-	$year = $_POST['year']
-	if($day!= "" and $day>='1' and $day<= '31' and $month!= "" and $month>='1' and $month<= '12' and  $year!= "" and $year>='1900' and $_POST['year']<= '2016'  )
-		echo "DOB is valid";
+	$day = $_POST['day'];
+	$month = $_POST['month'];
+	$year = $_POST['year'];
+	if($day!= "" and $day>='1' and $day<= '31' and $month!= "" and $month>='1' and $month<= '12' and  $year!= "" and $year>='1900' and $year<= '2016'  )
+		echo "Valid DOB";
 	else
-		echo "DOB is invalid";
+		echo "Invalid DOB";
+	echo "</br>";
+	
+	//BLOOD GROUP VALIDATION
+	
+	$bloodgroup = $_POST['bloodgrp'];
+	if($bloodgroup!="None")
+		{
+			echo "Blood group is selected";
+		}
+		else
+			echo "Blood group in not selected";
 ?>
