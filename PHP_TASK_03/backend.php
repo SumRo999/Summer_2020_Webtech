@@ -105,5 +105,18 @@
 		echo "Degree in not selected";
 	echo "</br>";
 	
-	print_r($_POST);
+	//USERID VALIDATION
+	$userid = $_POST['userid'];
+	if($userid!="" and $userid>=0)
+		echo "User Id is valid";
+	else
+		echo "User Id is invalid";
+	echo "</br>";
+
+	//IMAGE VALIDATION
+	$image = $_POST['image'];
+	if($_POST['photo']!="")
+		echo "Photo is uploaded";
+	else
+		echo "Photo is not uploaded";
 ?>
