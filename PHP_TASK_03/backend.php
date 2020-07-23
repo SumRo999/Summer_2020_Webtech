@@ -1,5 +1,5 @@
 <?php
-	//print_r($_POST);
+	//NAME VALIDATION
 	if(isset($_POST['Submit']))
 	{
 		$name = $_POST['name'];
@@ -17,7 +17,7 @@
 					else
 						echo "Invalid Name";
 				}
-				echo "Invalid Name";
+				echo "Valid Name";
 			}
 			else
 				echo "Invalid Name";
@@ -25,5 +25,42 @@
 		else
 			echo "Invalid Name";
     }
-	//print_r($_POST);
+	echo "</br>";
+	
+	
+	//EMAIL VALIDATION
+	$email = $_POST['email'];
+	if($email!="")
+	{
+		$count=0;
+		$a= str_split($email);
+		for($i=0; $i<count($a); $i++)
+		{
+			if($a[$i]=='@')
+			{
+				$count++;
+			}
+			else
+				continue;
+		}
+		if($count==1)
+		{
+			$at=explode('@', $email);
+			$dot=explode('.', $at[1]);
+			$extension=0;
+			for($i=0; $i<count($dot); $i++)
+			{
+				$extension=$dot[$i];
+			}
+			if($extension=="com" or $extension=="edu")
+				echo "Valid Email";
+			else
+				echo "Invalid Email";
+		}
+		else
+			echo "Invalid Email";
+	}
+	else
+		echo "Invalid Email"
+	
 ?>
