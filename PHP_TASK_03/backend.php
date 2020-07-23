@@ -114,9 +114,8 @@
 	echo "</br>";
 
 	//IMAGE VALIDATION
-	$image = $_POST['image'];
-	if($_POST['photo']!="")
-		echo "Photo is uploaded";
+	if($_POST['image']!="")
+		echo "Image is uploaded";
 	else
-		echo "Photo is not uploaded";
+		echo "Image is not uploaded";
 ?>
