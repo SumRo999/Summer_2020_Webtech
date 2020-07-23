@@ -65,9 +65,7 @@
 	echo"</br>";
 	
 	//GENDER VALIDATION
-	
-	$gender = $_POST['gender'];
-	if(isset($gender))
+	if(isset($_POST['gender']))
 	{
 		echo "Gender is Selected";
 	}
@@ -90,9 +88,22 @@
 	
 	$bloodgroup = $_POST['bloodgrp'];
 	if($bloodgroup!="None")
-		{
-			echo "Blood group is selected";
-		}
-		else
-			echo "Blood group in not selected";
+	{
+	    echo "Blood group is selected";
+	}
+	else
+		echo "Blood group in not selected";
+	echo "</br>";
+	
+	//DEGREE VALIDATION
+	
+	if(isset($_POST['degree']))
+	{
+		echo "Degree is selected";
+	}
+	else
+		echo "Degree in not selected";
+	echo "</br>";
+	
+	print_r($_POST);
 ?>
