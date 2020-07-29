@@ -5,6 +5,7 @@
 	{
 		$uname = $_POST['userName'];
 		$password = $_POST['password'];
+		
 		if(!empty($uname) && !empty($password) && isset($_POST['remember_me']))
 		{
 			if(isset($_COOKIE['userName']) && isset($_COOKIE['password']))
@@ -21,14 +22,14 @@
 		    {
 				if($uname==$_SESSION['userName'] && $password==$_SESSION['password'])
 				{
-					setcookie('userName',$uname,time()+6000,'/');
-					setcookie('password',md5($password),time()+6000,'/');
-					setcookie('name',$name,time()+6000,'/');
-					setcookie('email',$email,time()+6000,'/');
-					setcookie('day',$day,time()+6000,'/');
-					setcookie('year',$year,time()+6000,'/');
-					setcookie('month',$month,time()+6000,'/');
-					setcookie('gender',$gender,time()+6000,'/');
+					setcookie('userName',$_SESSION['userName'],time()+6000,'/');
+					setcookie('password',md5($_SESSION['password']),time()+6000,'/');
+					setcookie('name',$_SESSION['name'],time()+6000,'/');
+					setcookie('email',$_SESSION['email'],time()+6000,'/');
+					setcookie('day',$_SESSION['day'],time()+6000,'/');
+					setcookie('year',$_SESSION['year'],time()+6000,'/');
+					setcookie('month',$_SESSION['month'],time()+6000,'/');
+					setcookie('gender',$_SESSION['gender'],time()+6000,'/');
 					setcookie('status','set',time()+6000,'/');
 					session_destroy();
 					header('location:userdashboard.php');
