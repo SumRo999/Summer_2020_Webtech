@@ -43,27 +43,15 @@
 			</td>
 			<td rowspan="8">
 			    <fieldset>
-					<legend><b>PROFILE</b></legend>
-					<form>
+					<legend><b>EDIT PROFILE</b></legend>
+					<form method="post">
 						<br/>
 						<table cellpadding="0" cellspacing="0">
 							<tr>
-								<td width="10%">Name</td>
+								<td width="20%">Name</td>
 								<td>:</td>
-								<td width="15%" align="left">
-									<?php
-										if(!empty($_SESSION))
-										{
-											echo $_SESSION['name']; 
-										}
-										else
-											echo $_COOKIE['name'];
-									?>
-								</td>
-								<td rowspan="7" align="center" width="50%">
-									<img width="128" src="1.jpg"/>
-									<br/>
-									<a href="changeprofilepicture.php">Change</a>
+								<td width="70%" align="left">
+									<input type="text" name="name">
 								</td>
 							</tr>		
 							<tr><td colspan="3"><hr/></td></tr>
@@ -71,14 +59,7 @@
 								<td>Email</td>
 								<td>:</td>
 								<td>
-									<?php
-										if(!empty($_SESSION))
-										{
-											echo $_SESSION['email']; 
-										}
-										else
-											echo $_COOKIE['email'];
-									?>
+									<input type="text" name="email">
 								</td>
 							</tr>		
 							<tr><td colspan="3"><hr/></td></tr>			
@@ -86,14 +67,9 @@
 								<td>Gender</td>
 								<td>:</td>
 								<td>
-									<?php
-										if(!empty($_SESSION))
-										{
-											echo $_SESSION['gender']; 
-										}
-										else
-											echo $_COOKIE['gender'];
-									?>
+									<input name="gender" type="radio" value="Male">Male
+									<input name="gender" type="radio" value="Female">Female
+									<input name="gender" type="radio" value="Other">Other
 								</td>
 							</tr>
 							<tr><td colspan="3"><hr/></td></tr>
@@ -101,25 +77,52 @@
 								<td>Date of Birth</td>
 								<td>:</td>
 								<td>
-									<?php
-										if(!empty($_SESSION))
-										{
-											echo $_SESSION['day']."/".$_SESSION['month']."/".$_SESSION['year']; 
-										}
-										else
-											echo $_COOKIE['day']."/".$_COOKIE['month']."/".$_COOKIE['year'];
-									?>
+									<input type="text" name="date"><br/>
+									dd/mm/yyyy
 								</td>
 							</tr>
 						</table>	
 						<hr/>
-						<a href="editprofile.php">Edit Profile</a>	
+						<input type="submit" value="Submit" name="Submit">
+						
 					</form>
 				</fieldset>
-			</td>
+				</td>
 		</tr>
 	</table>
 </fieldset>
 <fieldset>
     <h5 align="center">Copyright © 2017</h5>
 </fieldset>
+<?php
+	if(isset($_POST['Submit']))
+	{
+		if(!empty($_SESSION))
+		{
+			if(!empty($_SESSION['status']))
+			{
+				$_SESSION['name'] = $_POST['name'];
+				$_SESSION['email'] = $_POST['email'];
+				$_SESSION['gender'] = $_POST['gender'];
+				$dmy=explode('/',$_POST['date']);
+				$_SESSION['day'] = $dmy['0'];
+				$_SESSION['month'] = $dmy['1'];
+				$_SESSION['year'] = $dmy['2'];
+			}
+		}
+		else
+		{
+			if(!empty($_COOKIE['status']))
+			{
+				setcookie('name',$_POST['name'],time()+6000,'/');
+				setcookie('email',$_POST['email'],time()+6000,'/');
+				setcookie('gender',$_POST['gender'],time()+6000,'/');
+				$dmy=explode('/',$_POST['date']);
+				setcookie('day',$dmy['0'],time()+6000,'/');
+				setcookie('year',$dmy['1'],time()+6000,'/');
+				setcookie('month',$dmy['2'],time()+6000,'/');
+				
+			}
+		}
+	}
+?>
