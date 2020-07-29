@@ -20,7 +20,7 @@
 			if($password == $confirm_password)
 			{
  
-			    $_SESSION['uname'] = $uname;
+			    $_SESSION['userName'] = $uname;
 			    $_SESSION['password'] = $password;
 			    $_SESSION['name'] = $name;
 			    $_SESSION['confirm_password'] = $confirm_password;
