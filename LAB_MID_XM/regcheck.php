@@ -16,13 +16,9 @@
 		else{
 			if($password == $confirm_password)
 			{
- 
-			    $_SESSION['id'] = $id;
-			    $_SESSION['password'] = $password;
-			    $_SESSION['name'] = $name;
-			    $_SESSION['confirm_password'] = $confirm_password;
-			    $_SESSION['email'] = $email;
-			    $_SESSION['userType'] = $userType;
+				$file = fopen('user.txt','a');
+				fwrite($file, $name.'|'.$id.'|'.$password.'|'.$confirmPassword.'|'.$email.'|'.$userType."/r/n");
+				fclose($file);
                 header("location:login.html");				
 			}
 			else
