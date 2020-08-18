@@ -24,9 +24,10 @@
 				<tr>
 					Do you want to delete for sure?(Click yes to delete & no for not to delete)
 					<td>
-						<input type="text" name="yes" value="yes">
-						<input type="text" name="no" value="no">
+						<input type="submit" name="yes" value="yes">
+						<input type="submit" name="no" value="no">
 						<input type="hidden" name="id" value="<?=$user['id']?>"> 
+						<br/>
 						<a href="all_users.php">Back</a>
 					</td>
 				</tr>

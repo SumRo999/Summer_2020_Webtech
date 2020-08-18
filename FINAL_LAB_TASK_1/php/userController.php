@@ -7,15 +7,17 @@
 	//add user
 	if(isset($_POST['create'])){
 		$username 	= $_POST['username'];
+		$id 	= $_POST['id'];
 		$password 	= $_POST['password'];
 		$email 		= $_POST['email'];
 
-		if(empty($username) || empty($password) || empty($email)){
+		if(empty($username) || empty($password) || empty($email) || empty($id)){
 			header('location: ../views/register.php?error=null_value');
 		}else{
 
 			$user = [
 				'username'=> $username,
+				'id'=> $id,
 				'password'=> $password,
 				'email'=> $email
 			];
@@ -35,11 +37,11 @@
 		$id 	= $_POST['id'];
 		$status = delete($id);
 
-			if($status){
-				header('location: ../views/all_users.php?success=done');
-			}else{
-				header('location: ../views/delete.php?error=db_error');
-			}
+		if($status){
+			header('location: ../views/all_users.php?success=done');
+		}
+	}elseif(isset($_POST['no'])){
+		header('location: ../views/all_users.php?');
 	}
 	
 
@@ -47,19 +49,19 @@
 	if(isset($_POST['edit'])){
 
 		$username 	= $_POST['username'];
+		$id 		= $_POST['id'];
 		$password 	= $_POST['password'];
 		$email 		= $_POST['email'];
-		$id 		= $_POST['id'];
 
-		if(empty($username) || empty($password) || empty($email)){
+		if(empty($username) || empty($password) || empty($email) || empty($id)){
 			header('location: ../views/edit.php?id={$id}');
 		}else{
 
 			$user = [
 				'username'=> $username,
+				'id'=> $id,
 				'password'=> $password,
-				'email'=> $email,
-				'id'=> $id
+				'email'=> $email
 			];
 
 			$status = update($user);

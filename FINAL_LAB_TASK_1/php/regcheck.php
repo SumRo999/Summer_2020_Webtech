@@ -5,15 +5,17 @@
 	if(isset($_POST['submit'])){
 
 		$username 	= $_POST['username'];
+		$id 	= $_POST['id'];
 		$password 	= $_POST['password'];
 		$email 		= $_POST['email'];
 
-		if(empty($username) || empty($password) || empty($email)){
+		if(empty($username) || empty($password) || empty($email) || empty($id)){
 			header('location: ../views/register.php?error=null_value');
 		}else{
 
 			$user = [
 				'username'=> $username,
+				'id'=> $id,
 				'password'=> $password,
 				'email'=> $email
 			];

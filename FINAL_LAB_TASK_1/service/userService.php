@@ -59,7 +59,7 @@
 			echo "DB connection error";
 		}
 
-		$sql = "insert into users values('', '{$user['username']}','{$user['password']}', '{$user['email']}', 'admin')";
+		$sql = "insert into users values('{$user['id']}', '{$user['username']}','{$user['password']}', '{$user['email']}', 'admin')";
 		if(mysqli_query($conn, $sql)){
 			return true;
 		}else{
@@ -89,7 +89,7 @@
 			echo "DB connection error";
 		}
 
-		$sql = "delete from `company` where id=$id";
+		$sql = "delete from `users` where id=$id";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
