@@ -2,21 +2,22 @@
 <html>
 <head>
 	<title>Profile Picture</title>
+	<script type="text/javascript" src="propic.js"></script>
 </head>
 <body>
-	<form action="propic.php" method="post" enctype="multipart/form-data">
+	<form action="propic.php" method="post" enctype="multipart/form-data" onsubmit="return validate()">
 		<table>
 			<tr>
 				<td>User ID:</td>
 				<td>
-					<input type="text" name="id">
+					<input type="text" id="id" name="id" onkeyup="clicks1()">
 			    </td>
-			    <td></td>
+			    <td id="show11"></td>
 			</tr>
 			<tr>
 				<td>Profile Picture:</td>		
-				<td colspan="2"><input type="file" name="image"></td>
-				<td id="show"></td>
+				<td colspan="2"><input type="file" id="image" name="image" onclick="clicks2()"></td>
+				<td id="show22"></td>
 			</tr>
 			<tr>
 				<td>

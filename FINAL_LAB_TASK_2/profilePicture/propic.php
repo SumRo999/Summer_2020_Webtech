@@ -8,5 +8,5 @@
    	    echo "Profile picture name $propic";
    }
    else
-   	   header('location:name.html')
+   	   header('location:propic.html');
 ?>
