@@ -2,14 +2,15 @@
 <html>
 <head>
 	<title>Blood Group</title>
+	<script type="text/javascript" src="bg.js"></script>
 </head>
 <body>
-	<form action="bg.php" method="post">
+	<form action="bg.php" method="post" onsubmit="return validate()">
 		<table>
 			<tr>
 				<td>
 					Blood Group : 
-					<select name="bloodgrp"  bg="" required>
+					<select name="bg"  bg="" required onkeyup="clicks()">
 						<option value="">None</option>
 				        <option>A+</option>
 				        <option>A-</option>
