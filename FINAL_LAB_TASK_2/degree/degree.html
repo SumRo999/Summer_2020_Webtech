@@ -2,17 +2,18 @@
 <html>
 <head>
 	<title>Degree</title>
+	<script type="text/javascript" src="degree.js"></script>
 </head>
 <body>
-	<form action="degree.php" method="post">
+	<form action="degree.php" method="post" onsubmit="return validate()">
 		<table>
 			<tr>
 				<td>
 					Degree : 
-					<input type="checkbox" name="degree"> SSC
-					<input type="checkbox" name="degree"> HSC
-					<input type="checkbox" name="degree"> BSc.
-					<input type="checkbox" name="degree"> MSc.
+					<input type="checkbox" name="degree" value="SSC" id="ssc" onkeyup="clicks()"> SSC
+					<input type="checkbox" name="degree" value="HSC" id="hsc" onkeyup="clicks()"> HSC
+					<input type="checkbox" name="degree" value="BSc." id="bsc" onkeyup="clicks()"> BSc.
+					<input type="checkbox" name="degree" value="MSc." id="msc" onkeyup="clicks()"> MSc.
 				</td>
 				<td id="show"></td>
 			</tr>
