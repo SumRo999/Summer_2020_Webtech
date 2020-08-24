@@ -4,10 +4,18 @@
 	<title>Profile Picture</title>
 </head>
 <body>
-	<form>
+	<form action="propic.php" method="post" enctype="multipart/form-data">
 		<table>
-			<tr>		
-				Profile Picture :<td colspan="2"><input type="file" name="image"></td>
+			<tr>
+				<td>User ID:</td>
+				<td>
+					<input type="text" name="id">
+			    </td>
+			    <td></td>
+			</tr>
+			<tr>
+				<td>Profile Picture:</td>		
+				<td colspan="2"><input type="file" name="image"></td>
 				<td id="show"></td>
 			</tr>
 			<tr>
