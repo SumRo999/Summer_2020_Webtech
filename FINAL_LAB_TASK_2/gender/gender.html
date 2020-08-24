@@ -2,16 +2,17 @@
 <html>
 <head>
 	<title>Gender</title>
+	<script type="text/javascript" src="gender.js" ></script>
 </head>
 <body>
-	<form action="gender.php" method="post">
+	<form action="gender.php" method="post" onsubmit="return validate()">
 		<table>
 			<tr>
 				<td>
 					Gender : 
-					<input type="radio" name="gender" value="male">  Male 
-				    <input type="radio" name="gender" value="female"> Female
-				    <input type="radio" name="gender" value="other"> Other
+					<input type="radio" name="gender" id="male" value="male" onkeyup="clicks()">  Male 
+				    <input type="radio" name="gender" id="female" value="female" onkeyup="clicks()"> Female
+				    <input type="radio" name="gender" id="other" value="other" onkeyup="clicks()"> Other
 				</td>
 				<td id="show"></td>
 			</tr>
