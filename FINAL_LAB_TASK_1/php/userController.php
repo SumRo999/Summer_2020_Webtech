@@ -44,7 +44,6 @@
 		header('location: ../views/all_users.php?');
 	}
 	
-
 	//update user
 	if(isset($_POST['edit'])){
 
