@@ -2,15 +2,16 @@
 <html>
 <head>
 	<title>Name</title>
-	<script type="text/javascript" src="name.js"></script>
+	<script type="text/javascript" src="name.js" ></script>
 </head>
 <body>
-	<form action="name.php" method="post">
+	<form action="name.php" method="post" onsubmit="return validate()">
 		<table>
 			<tr>
 				<td>
-					<input type="text" name="name" value="">
+					Name : <input type="text" id="name" name="name" onkeyup="clicks()">
 				</td>
+				<td id="show"></td>
 			</tr>
 			<tr>
 				<td>
