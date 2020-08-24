@@ -2,16 +2,17 @@
 <html>
 <head>
 	<title>Date of Birth</title>
+	<script type="text/javascript" src="dob.js"></script>
 </head>
 <body>
-	<form action="dob.php" method="post">
+	<form action="dob.php" method="post" onsubmit="return validate()">
 		<table>
 			<tr>
 				<td>
 					Date of birth : 
-					<input type="text" name="day" size="2">/
-					<input type="text" name="month" size="2">/
-					<input type="text" name="year" size="4">(dd/mm/yy)
+					<input type="text" name="day" size="2" id="day" onkeyup="clicks()">/
+					<input type="text" name="month" size="2" id="month" onkeyup="clicks()">/
+					<input type="text" name="year" size="4" id="year" onkeyup="clicks()">(dd/mm/yy)
 				</td>
 				<td id="show"></td>
 			</tr>
