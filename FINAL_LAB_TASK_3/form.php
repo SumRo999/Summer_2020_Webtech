@@ -16,6 +16,8 @@
    	   echo "Blood Group is $bg<br>";
    	   $degree = $_POST['degree'];
    	   echo "Degree is $degree<br>";
+   	   $propic = $_FILES['image']['name'];
+   	   echo "Profile picture name $propic";
    }
    else
    	   header('location:form.html');

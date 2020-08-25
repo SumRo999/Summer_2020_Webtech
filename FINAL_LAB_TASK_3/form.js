@@ -187,7 +187,24 @@ function validate()
 		degreevalidation = false;
 	}
 
-	if(namevalidation==true && emailvalidation==true && gendervalidation==true && dobvalidation==true && bgvalidation==true)
+	//image validation
+	var imagevalidation = false;
+	var show6 = document.getElementById("show6");
+	var image = document.getElementById("image").value;
+	if(image != "")
+	{
+		imagevalidation = true;
+	}
+	else
+	{
+		var show6 = document.getElementById("show6");
+		show6.innerHTML = "Picture cannot be empty";
+		imagevalidation = false;
+	}
+	
+	
+
+	if(namevalidation==true && emailvalidation==true && gendervalidation==true && dobvalidation==true && bgvalidation==true && degreevalidation==true && imagevalidation==true)
 	{
 		return true;
 	}
@@ -225,5 +242,10 @@ function clickBG()
 function clickDegree()
 {
 	var show = document.getElementById("show5");
+	show.innerHTML = "";
+}
+function clickImage()
+{
+	var show = document.getElementById("show6");
 	show.innerHTML = "";
 }
