@@ -132,7 +132,45 @@ function validate()
 		gendervalidation=false;
 	}
 
-	if(namevalidation==true && emailvalidation==true && gendervalidation==true)
+	//dob validation
+	var dobvalidation = false;
+	var show3 = document.getElementById("show3");
+	var day = document.getElementById("day").value;
+	var month = document.getElementById("month").value;
+	var year= document.getElementById("year").value;
+	if( day != "" && month != "" && year != "")
+	{
+		if( day>=1 && day<=31 && month>=1 && month<=12 && year>=1990 && year<=2016)
+		{
+			dobvalidation = true;
+		}
+		else
+		{
+			show3.innerHTML = "Must be a valid number (dd: 0-31, mm: 1-12, yyyy: 1900-2016)";
+		    dobvalidation = false;
+		}
+	}
+	else
+	{
+		show3.innerHTML = "Cannot be submitted empty";
+		dobvalidation = false;
+	}
+
+	//bloog group validation
+	var bgvalidation = false;
+	var show4 = document.getElementById("show4");
+	var bg = document.getElementById("bg").value;
+	if( bg != "")
+	{
+		bgvalidation = true;
+	}
+	else
+	{
+		show4.innerHTML = "|Must be selected";
+		bgvalidation = false;
+	}
+
+	if(namevalidation==true && emailvalidation==true && gendervalidation==true && dobvalidation==true && bgvalidation==true)
 	{
 		return true;
 	}
@@ -155,5 +193,15 @@ function clickEmail()
 function clickGender()
 {
 	var show = document.getElementById("show2");
+	show.innerHTML = "";
+}
+function clickDOB()
+{
+	var show = document.getElementById("show3");
+	show.innerHTML = "";
+}
+function clickBG()
+{
+	var show = document.getElementById("show4");
 	show.innerHTML = "";
 }

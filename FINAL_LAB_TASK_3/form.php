@@ -8,6 +8,12 @@
    	   echo "Email is $email<br>";
    	   $gender = $_POST['gender'];
    	   echo "Gender is $gender<br>";
+   	   $day = $_POST['day'];
+   	   $month = $_POST['month'];
+   	   $year = $_POST['year'];
+   	   echo "Date of Birth is $day/$month/$year<br>";
+   	   $bg = $_POST['bg'];
+   	   echo "Blood Group is $bg<br>";
    }
    else
    	   header('location:form.html');
