@@ -40,17 +40,18 @@ function validate()
 					{
 						decision="invalidName";
 					}
-
-					if(decision=="validName")
-					{
-						namevalidation=true;
-					}
-					else
-					{
-						show.innerHTML = "Can contain alphabates or dot(.) or dash(-)";
-						namevalidation=false;	
-					}
 				}
+
+				if(decision=="validName")
+				{
+					namevalidation=true;
+				}
+				else
+				{
+					show.innerHTML = "Can contain alphabates or dot(.) or dash(-)";
+					namevalidation=false;	
+				}
+				
 
 			}
 			else
@@ -106,7 +107,7 @@ function validate()
 		else
 		{
 			show1.innerHTML = "Must be a valid email address (i.e anything@example.com or anything@example.edu)";
-			return false;
+			emailvalidation=false;
 		}
 	}
 	else
@@ -115,7 +116,23 @@ function validate()
 		emailvalidation=false;
 	}
 
-	if( namevalidation==true && emailvalidation==true)
+	//gender validation
+	var gendervalidation = false;
+	var show2 = document.getElementById("show2");
+	var male = document.getElementById("male").checked;
+	var female = document.getElementById("female").checked;
+	var other = document.getElementById("other").checked;
+	if( male == true || female == true || other == true)
+	{
+		gendervalidation=true;
+	}
+	else
+	{
+		show2.innerHTML = "At least one of them has to be selected";
+		gendervalidation=false;
+	}
+
+	if(namevalidation==true && emailvalidation==true && gendervalidation==true)
 	{
 		return true;
 	}
@@ -133,5 +150,10 @@ function clickName()
 function clickEmail()
 {
 	var show = document.getElementById("show1");
+	show.innerHTML = "";
+}
+function clickGender()
+{
+	var show = document.getElementById("show2");
 	show.innerHTML = "";
 }
