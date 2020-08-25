@@ -170,6 +170,23 @@ function validate()
 		bgvalidation = false;
 	}
 
+	//degree validation
+	var degreevalidation = false;
+	var show5 = document.getElementById("show5");
+	var ssc = document.getElementById("ssc").checked;
+	var hsc = document.getElementById("hsc").checked;
+	var bsc = document.getElementById("bsc").checked;
+	var msc = document.getElementById("msc").checked;
+	if( ssc == true || hsc == true || bsc == true || msc == true)
+	{
+		degreevalidation = true;
+	}
+	else
+	{
+		show5.innerHTML = "|At least one of them has to be selected";
+		degreevalidation = false;
+	}
+
 	if(namevalidation==true && emailvalidation==true && gendervalidation==true && dobvalidation==true && bgvalidation==true)
 	{
 		return true;
@@ -203,5 +220,10 @@ function clickDOB()
 function clickBG()
 {
 	var show = document.getElementById("show4");
+	show.innerHTML = "";
+}
+function clickDegree()
+{
+	var show = document.getElementById("show5");
 	show.innerHTML = "";
 }
