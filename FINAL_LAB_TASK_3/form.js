@@ -1,5 +1,7 @@
 function validate()
 {
+	//name validation
+	var namevalidation = false;
 	var show = document.getElementById("show");
 	var name = document.getElementById("name").value;
 	if(name != "")
@@ -41,12 +43,12 @@ function validate()
 
 					if(decision=="validName")
 					{
-						return true;
+						namevalidation=true;
 					}
 					else
 					{
 						show.innerHTML = "Can contain alphabates or dot(.) or dash(-)";
-						return false;	
+						namevalidation=false;	
 					}
 				}
 
@@ -54,19 +56,71 @@ function validate()
 			else
 			{
 				show.innerHTML = "Please start with a letter";
-				return false;
+				namevalidation=false;
 			}
 		}
 		else
 		{
 			show.innerHTML = "Contains at least two words";
-			return false;
+			namevalidation=false;
 		}	
 
 	}
 	else
 	{
 		show.innerHTML = "Cannot be submitted empty";
+		namevalidation=false;
+	}
+
+	//email validation
+	var emailvalidation = false;
+	var show1 = document.getElementById("show1");
+	var email = document.getElementById("email").value;
+	if(email != "")
+	{
+		var count = 0;
+		for(i=0 ; i < email.length ; i++)
+		{
+			if(email[i]=="@")
+				count++;
+			else
+				continue;
+		}
+		if(count==1)
+		{
+			var at = email.split("@");
+			var dot = at[1].split(".");
+			var comEdu;
+			for(i=0; i<dot.length; i++)
+			{
+				comEdu = dot[i];
+			}
+			if(comEdu=="com" || comEdu=="edu")
+				emailvalidation=true;
+			else
+			{
+				show1.innerHTML = "Must be a valid email address (i.e anything@example.com or anything@example.edu)";
+				emailvalidation=false;
+			}
+		}
+		else
+		{
+			show1.innerHTML = "Must be a valid email address (i.e anything@example.com or anything@example.edu)";
+			return false;
+		}
+	}
+	else
+	{
+		show1.innerHTML = "Cannot be submitted empty";
+		emailvalidation=false;
+	}
+
+	if( namevalidation==true && emailvalidation==true)
+	{
+		return true;
+	}
+	else
+	{
 		return false;
 	}
 }
@@ -74,5 +128,10 @@ function validate()
 function clickName()
 {
 	var show = document.getElementById("show");
+	show.innerHTML = "";
+}
+function clickEmail()
+{
+	var show = document.getElementById("show1");
 	show.innerHTML = "";
 }
