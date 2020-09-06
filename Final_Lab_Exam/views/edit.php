@@ -22,7 +22,7 @@
 			<legend>Edit Author</legend>
 			<table>
 				<tr>
-					<td>Author Nname</td>
+					<td>Author Name</td>
 					<td><input type="text" name="authorname" value="<?=$author['authorname']?>"></td>
 				</tr>
 				<tr>
