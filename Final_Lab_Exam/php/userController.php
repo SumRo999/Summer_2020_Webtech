@@ -6,16 +6,18 @@
 
 	//add user
 	if(isset($_POST['create'])){
+		$id             = $_POST['id'];
 		$authorname 	= $_POST['authorname'];
 		$contactnumber 	= $_POST['contactnumber'];
 		$username 	    = $_POST['username'];
 		$password 	    = $_POST['password'];
 
-		if(empty($authorname) || empty($contactnumber) ||empty($username) || empty($password)){
+		if(empty($id) ||empty($authorname) || empty($contactnumber) ||empty($username) || empty($password)){
 			header('location: ../views/register.php?error=null_value');
 		}else{
 
 			$author = [
+				'id'=>$id,
 				'authorname'=>$authorname,
 				'contactnumber'=>$contactnumber,
 				'username'=> $username,
@@ -33,7 +35,7 @@
 	}
 
 	//update author
-	/*if(isset($_POST['edit'])){
+	if(isset($_POST['edit'])){
 
 		$authorname 	= $_POST['authorname'];
 		$contactnumber 	= $_POST['contactnumber'];
@@ -41,16 +43,16 @@
 		$password 	    = $_POST['password'];
 		$id             = $_POST['id'];
 
-		if(empty($authorname) || empty($contactnumber) ||empty($username) || empty($password)){
+		if(empty($id) ||empty($authorname) || empty($contactnumber) ||empty($username) || empty($password)){
 			header('location: ../views/edit.php?id={$id}');
 		}else{
 			
 			$author = [
+				'id'=> $id,
 				'authorname'=>$authorname,
 				'contactnumber'=>$contactnumber,
 				'username'=> $username,
-				'password'=> $password,
-				'id'=> $id
+				'password'=> $password
 			];
 
 			$status = update($author);
@@ -61,6 +63,6 @@
 				header('location: ../views/edit.php?id={$id}');
 			}
 		}
-	}*/
+	}
 
 ?>
