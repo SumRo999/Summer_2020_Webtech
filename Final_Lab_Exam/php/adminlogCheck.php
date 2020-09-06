@@ -21,7 +21,7 @@
 
 			if($status){
 				$_SESSION['username'] = $username;
-				header('location: ../views/home.php');
+				header('location: ../views/adminhome.php');
 			}else{
 				header('location: ../views/adminlogin.php?error=invalid_user');
 			}

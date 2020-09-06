@@ -42,7 +42,7 @@
 
 		$sql = "select * from admin where username='{$admin['username']}' and password='{$admin['password']}'";
 		$result = mysqli_query($conn, $sql);
-		$amin = mysqli_fetch_assoc($result);
+		$adsmin = mysqli_fetch_assoc($result);
 
 		if(count($admin) > 0 ){
 			return true;
