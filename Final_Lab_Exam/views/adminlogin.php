@@ -45,9 +45,8 @@
 				<tr>
 					<td></td>
 					<td><input type="submit" name="submit" value="Submit"></td>
+					<td><a href="../index.php">Back</a></td>
 				</tr>
-			</table>
-		</fieldset>
 	</form>
 </body>
 </html>
